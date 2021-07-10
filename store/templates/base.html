@@ -31,76 +31,204 @@
 </head>
 
 <body>
+<!-- Navigation Bar starts here -->
+  <div class="header">
+      <a href='/'><img class="header_logo" src="static/store/nsmed.jpg" alt=""  /></a>
+      <div class="header_search">
+        <form method='get' action='/Store/search'>
+        <div class="icons">
+          <input
+            class="header_searchInput"
+            placeholder="Search for Products"
+            type="text"
+            name="search" id="search"
+          />
+          <div class="input-group-btn"  >
+            <button class="btn btn-default" type="submit" style="width: 140%; height: 70%; ">
+                Search
+            </button>
+          </div>
+        </div>
+        </form>
 
-  <!-- navbar -->
+        <div class="main_navigation">
+          <div class="nav_option">
+            <img class="medicine" src="static/store/medicine.jpg" alt="" />
+            <a href="medicines" style="text-decoration: none;">
+            <span class="nav_optionOne">
+              Medicine
+              <small>over 2500 Medicine</small>
+            </span>
+            </a>
+          </div>
+          <div class="nav_option">
+            <img class="medicine" src="static/store/wellness.jpg" alt="" />
+            <a href="wellness" style="text-decoration: none;">
+            <span class="nav_optionOne">
+              Wellness
+              <small>Health Products</small>
+            </span>
+            </a>
+          </div>
+          <div class="nav_option">
+            <img class="medicine" src="static/store/diagnostic.png" alt="" />
+            <a href="lab" style="text-decoration: none;">
+            <span class="nav_optionOne">
+              Diagnostic
+              <small>Book tests and checkups</small>
+            </span>
+            </a>
+          </div>
+          <div class="nav_option">
+            <img class="medicine" src="static/store/health.png" alt="" />
+            
+            <a href="covid" style="text-decoration: none;">
+            <span class="nav_optionOne">
+              Covid-19
+              <small>Essentials products to fight with Covid-19</small>
+            </span>
+          </a>
+          </div>
+        </div>
+      </div>
 
-  <nav class="one-edge-shadow 
-  sticky-top navbar 
-  navbar-expand-lg
-   navbar-light bg-white">
-    <a class="navbar-brand" href="/">ns-Med</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/store">Store <span class="sr-only">(current)</span></a>
-        </li>
-
-      </ul>
-
-
-      <ul class=" navbar-nav my-2 my-lg-0">
-        <li class="nav-item ">
-          <a class="nav-link" href="/cart">Cart 
-            <span class="badge badge-info">{{request.session.cart.keys|length}}</span>
+        <a href="/cart" style="text-decoration: none;">
+        <div class="header_option">
+            <img src="static/store/cart.jpg" style="width: 40px; height: 40px; border-radius: 50%;">
+            <span class="header_optionOne badge badge-info" style="text-align: center;">{{request.session.cart.keys|length}}</span>
             <span class="sr-only">(current)</span></a>
-        </li>
-        {% if request.session.customer %}
+          </div>
+          </a>
+
         
-        <li class="nav-item ">
-          <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
-        </li>
+      <div class="header_nav">
+        {% if request.session.customer %}
+          <a href="/orders" style="text-decoration: none;">
+          <div class="header_option">
+          <img src="static/store/User.png" style="width: 40px; height: 40px; border-radius: 50%;">
+            <span class="header_optionOne">Your Orders</span>
+          </div>
+          </a>
+
+          <a href="/logout" style="text-decoration: none;">
+          <div class="header_option">
+            <img src="static/store/logout.png" style="width: 40px; height: 40px; border-radius: 50%;">
+            <span class="header_optionOne">Logout</span>
+          </div>
+          </a>
+
         {% else %}
-       
-        <li class="nav-item ">
-          <a class="nav-link" href="/signup">Signup<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
-        </li>
+            
+          <a href="/signup" style="text-decoration: none;">
+          <div class="header_option">
+            <img src="static/store/logout.png" style="width: 40px; height: 40px; border-radius: 50%;">
+            <span class="header_optionOne">Signup</span>
+          </div>
+          </a>
+          <a href="/login" style="text-decoration: none;">
+          <div class="header_option">
+            <img src="static/store/logout.png" style="width: 40px; height: 40px; border-radius: 50%;">
+            <span class="header_optionOne">Login</span>
+          </div>
+          </a>
         {% endif %}
-
-
-
-      </ul>
-
-
+      </div>
     </div>
-  </nav>
-   
+    <!-- Navigation Bar ends here -->
 
+<!-- carousel starts here  -->
+<div class="slideshow-container">
+    <div class="mySlides fade">
+      <img
+        src="static/store/slide2.jpg"
+        style="width: 100%; height: 300px; margin-top: 10px"
+      />
+    </div>
 
-    {% block content %}{% endblock %}
+    <div class="mySlides fade">
+      <img
+        src="../static/store/slide1.jpg"
+        style="width: 100%; height: 300px; margin-top: 10px"
+      />
+    </div>
 
+    <div class="mySlides fade">
+      <img
+        src="static/store/slide6.jpg"
+        style="width: 100%; height: 300px; margin-top: 10px"
+      />
+    </div>
+    <div class="mySlides fade">
+      <img
+        src="static/store/slide4.jpg"
+        style="width: 100%; height: 300px; margin-top: 10px"
+      />
+    </div>
+    <div class="mySlides fade">
+      <img
+        src="static/store/slide5.jpg"
+        style="width: 100%; height: 300px; margin-top: 10px"
+      />
+    </div>
+    <div class="mySlides fade">
+      <img
+        src="static/store/slide4.jpg"
+        style="width: 100%; height: 300px; margin-top: 10px"
+      />
+    </div>
+  </div>
+  <br />
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <div style="text-align: center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+  </script>
+  <!-- carousel ends here  -->
+
+    {% block content %}
+    {% endblock %}
+
+<!-- Footer starts here -->    
+<footer>
+    <div class="footer-bottom">
+        <p> &copy; 2021 Ns-Med. All rights reserved. In compliance with Drugs and Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit forming drugs.
+            <span>MedHunt</span></p>                
+            <ul class="socials">
+                <li><a href="/about"><i class="fa fa-facebook">About Us</i></a></li>
+                <li><a href="/contact"><i class="fa fa-twitter">Contact Us</i></a></li>
+            </ul>
+    </div>
+</footer>
+<!-- Footer ends here -->
+
 </body>
 
 </html>
