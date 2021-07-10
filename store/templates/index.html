@@ -68,7 +68,7 @@
 
 		<!-- filter -->
 
-		<div class="col-lg-3 mx-auto">
+		<div class="col-lg-2 mx-auto">
 			<div class="list-group">
 
 				<a href="/" class="list-group-item list-group-item-action">All Products</a>
@@ -81,10 +81,10 @@
 		</div>
 
 		<!-- all products -->
-		<div id='products' class="col-lg-9 mx-auto">
+		<div id='products' class="col-lg-10 mx-auto">
 			<div class="row mx-auto">
 				{% for product in products %}
-				<div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
+				<div class="card mx-auto mb-3" id={{product.id}} style="width: 14rem;">
 					<img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
 					<div class="card-body">
 						<p class="card-title">{{product.name}}</p>
