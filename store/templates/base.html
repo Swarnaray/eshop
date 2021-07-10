@@ -136,57 +136,22 @@
     </div>
     <!-- Navigation Bar ends here -->
 
-<!-- carousel starts here  -->
-<div class="slideshow-container">
-    <div class="mySlides fade">
-      <img
-        src="static/store/slide2.jpg"
-        style="width: 100%; height: 300px; margin-top: 10px"
-      />
-    </div>
 
-    <div class="mySlides fade">
-      <img
-        src="../static/store/slide1.jpg"
-        style="width: 100%; height: 300px; margin-top: 10px"
-      />
-    </div>
+    {% block content %}
+    {% endblock %}
 
-    <div class="mySlides fade">
-      <img
-        src="static/store/slide6.jpg"
-        style="width: 100%; height: 300px; margin-top: 10px"
-      />
+<!-- Footer starts here -->    
+<footer>
+    <div class="footer-bottom">
+        <p> &copy; 2021 Ns-Med. All rights reserved. In compliance with Drugs and Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit forming drugs.
+            <span>MedHunt</span></p>                
+            <ul class="socials">
+                <li><a href="/about"><i class="fa fa-facebook">About Us</i></a></li>
+                <li><a href="/contact"><i class="fa fa-twitter">Contact Us</i></a></li>
+            </ul>
     </div>
-    <div class="mySlides fade">
-      <img
-        src="static/store/slide4.jpg"
-        style="width: 100%; height: 300px; margin-top: 10px"
-      />
-    </div>
-    <div class="mySlides fade">
-      <img
-        src="static/store/slide5.jpg"
-        style="width: 100%; height: 300px; margin-top: 10px"
-      />
-    </div>
-    <div class="mySlides fade">
-      <img
-        src="static/store/slide4.jpg"
-        style="width: 100%; height: 300px; margin-top: 10px"
-      />
-    </div>
-  </div>
-  <br />
-
-  <div style="text-align: center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
+</footer>
+<!-- Footer ends here -->
 
   <script>
     var slideIndex = 0;
@@ -211,23 +176,6 @@
       setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
   </script>
-  <!-- carousel ends here  -->
-
-    {% block content %}
-    {% endblock %}
-
-<!-- Footer starts here -->    
-<footer>
-    <div class="footer-bottom">
-        <p> &copy; 2021 Ns-Med. All rights reserved. In compliance with Drugs and Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit forming drugs.
-            <span>MedHunt</span></p>                
-            <ul class="socials">
-                <li><a href="/about"><i class="fa fa-facebook">About Us</i></a></li>
-                <li><a href="/contact"><i class="fa fa-twitter">Contact Us</i></a></li>
-            </ul>
-    </div>
-</footer>
-<!-- Footer ends here -->
 
 </body>
 
