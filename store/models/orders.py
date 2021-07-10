@@ -18,6 +18,9 @@ class Order(models.Model):
 
     def placeOrder(self):
         self.save()
+    
+    def __str__(self):
+        return self.customer.first_name +" "+ self.customer.last_name
 
     @staticmethod
     def get_orders_by_customer(customer_id):
