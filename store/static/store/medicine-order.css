@@ -24,7 +24,7 @@
 }
 
  .header_searchInput {
-    height: 26px;
+   
     padding: 10px;
     border: none;
     font-size: 20px;
@@ -33,9 +33,10 @@
     margin-bottom: 20px;
 } 
 .btn {
-    background: rgb(50, 174, 177);
-      color: #fff;
-      /* width: 20%; */
+    
+      color:white;
+      background-color: rgb(50, 174, 177);
+    
     }
 
 
