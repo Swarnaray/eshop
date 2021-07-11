@@ -84,8 +84,8 @@
 		<div id='products' class="col-lg-10 mx-auto">
 			<div class="row mx-auto">
 				{% for product in products %}
-				<div class="card mx-auto mb-3" id={{product.id}} style="width: 14rem;">
-					<img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
+				<div class="card mx-auto mb-3" id={{product.id}} style="width: 14rem; height: 25rem;">
+					<img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" style="height: 50%;">
 					<div class="card-body">
 						<p class="card-title">{{product.name}}</p>
 						<p class="card-text"><b>{{product.price|currency}}</b></p>
@@ -115,6 +115,8 @@
 							<input hidden type="text" name='product' value='{{product.id}}'>
 							<input type="submit" class="float-right btn btn-light  form-control"
 								value="Add To Cart">
+							{% comment %} <input type="submit" class="float-right btn btn-light  form-control"
+								value="Buy Now"> {% endcomment %}
 						</form>
 						{% endif %}
 
