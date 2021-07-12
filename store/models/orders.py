@@ -17,12 +17,10 @@ class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     price = models.IntegerField()
-    address1 = models.CharField(max_length=50, default='', blank=True)
-    address2 = models.CharField(max_length=50, default='', blank=True)
-    pincode = models.CharField(max_length=7, default='', blank=True)
+    address = models.CharField(max_length=50, default='', blank=True)
     phone = models.CharField(max_length=50, default='', blank=True)
     date = models.DateField(default=datetime.datetime.today)
-    status=models.CharField(max_length=50,null=True,choices=STATUS)
+    status=models.CharField(max_length=50, default='Pending',null=True,choices=STATUS)
 
     def placeOrder(self):
         self.save()
