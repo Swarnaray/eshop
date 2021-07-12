@@ -15,6 +15,7 @@ class Signup(View):
         phone = postData.get('phone')
         email = postData.get('email')
         password = postData.get('password')
+        password1 = postData.get('password1')
         # validation
         value = {
             'first_name': first_name,
@@ -28,14 +29,16 @@ class Signup(View):
                             last_name=last_name,
                             phone=phone,
                             email=email,
-                            password=password)
+                            password=password,
+                            password1=password1)
         error_message = self.validateCustomer(customer)
 
         if not error_message:
-            print(first_name, last_name, phone, email, password)
+            # print(first_name, last_name, phone, email, password)
             customer.password = make_password(customer.password)
+            customer.password1 = make_password(customer.password1)
             customer.register()
-            return redirect('homepage')
+            return redirect('login')
         else:
             data = {
                 'error': error_message,
@@ -59,6 +62,8 @@ class Signup(View):
             error_message = 'Phone Number must be 10 char Long'
         elif len(customer.password) < 6:
             error_message = 'Password must be 6 char long'
+        elif not (customer.password == customer.password1):
+            error_message = 'Password does not match!!!'
         elif len(customer.email) < 5:
             error_message = 'Email must be 5 char long'
         elif customer.isExists():
