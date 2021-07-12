@@ -7,6 +7,8 @@ from .views.cart import Cart
 from .views.checkout import CheckOut
 from .views.orders import OrderView
 from .middlewares.auth import  auth_middleware
+from .views.payment import Payment
+from .views.paid import Paid
 
 
 urlpatterns = [
@@ -19,4 +21,6 @@ urlpatterns = [
     path('cart', auth_middleware(Cart.as_view()) , name='cart'),
     path('check-out', CheckOut.as_view() , name='checkout'),
     path('orders', auth_middleware(OrderView.as_view()), name='orders'),
+    path('payment', Payment , name='payment'),
+    path('paid', Paid , name='paid'),
 ]

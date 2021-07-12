@@ -33,7 +33,6 @@
                     <td>{{order.quantity}}</td>
                     <td>{{order.quantity|multiply:order.price|currency}}</td>
                     <td><small class="badge badge-success">{{order.status}}</small></td>
-                    {% comment %} <td>{{order.status}}</td> {% endcomment %}
                 </tr>
 
                 {% endfor %}
