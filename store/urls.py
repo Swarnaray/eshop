@@ -9,6 +9,7 @@ from .views.orders import OrderView
 from .middlewares.auth import  auth_middleware
 from .views.payment import Payment
 from .views.paid import Paid
+from .views.footer import contact, about, dev
 
 
 urlpatterns = [
@@ -23,4 +24,7 @@ urlpatterns = [
     path('orders', auth_middleware(OrderView.as_view()), name='orders'),
     path('payment', Payment , name='payment'),
     path('paid', Paid , name='paid'),
+    path('contact', contact , name='contact'),
+    path('about', about , name='about'),
+    path('dev', dev , name='dev'),
 ]
